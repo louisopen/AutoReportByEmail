@@ -1,17 +1,18 @@
 #!/bin/bash
-#This bash call by /home/pi/.config/autostart/autoboot.desktop
+#This bash called by /home/pi/.config/autostart/autoboot.desktop
+jump_dir=/home/pi
+#tr -d "\r" < oldname.sh > newname.sh   #if you can't cd to .... just do this command.
+cd $jump_dir
+pwd
+sudo python3 $jump_dir/InformationSystem.py >information.txt
+sudo chmod =766 information.txt
+#sudo python3 $jump_dir/NetworkStatus.py
+#chmod =766 networkstatus.txt
 
-cd /home/pi
-sudo python3 /home/pi/InformationSystem.py >information.txt
-sudo chmod =777 information.txt
-
-#sudo python3 /home/pi/NetworkStatus.py
-#chmod =777 networkstatus.txt
-
-sudo python3 /home/pi/reportip.py
+sudo python3 $jump_dir/reportip.py
 #sudo chmod =766 powerupip.txt
 
-#cd /home/pi/SteppingMotorWeb
-#sudo python3 /home/pi/SteppingMotorWeb/DualAtepperWeb.py
+#cd $jump_dir/SteppingMotorWeb
+#sudo python3 $jump_dir/SteppingMotorWeb/DualAtepperWeb.py
 
 exit 0
