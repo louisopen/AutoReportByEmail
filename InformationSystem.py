@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 #coding:utf-8
-#You may need pip install psutil
+#sudo apt-get install python3-pip
+#sudo pip3 install psutil
 import psutil
 import datetime
 import time

@@ -1,6 +1,6 @@
 #!/usr/bin/python
 #coding=utf-8
-#Python codeing for Raspberry Pi Linux
+#Python coding for Raspberry Pi Linux
 #Subject 1: 每次開機產生一條紀錄(Times Hostname MAC Datetime last-IP now-IP),當新的IP與舊的IP不一樣時發出郵件通知, Times(每次開機累進+1)
 #Subject 2: 每次開機檢查新的IP與舊的IP不一樣時發出郵件通知並存檔(Times Hostname MAC Datetime last-IP now-IP), Times(每次開機累進+1)
 #Subject 3: Linux系統定時(Cron)運行檢查新的IP與舊的IP不一樣時發出郵件通知並存檔(Times Hostname MAC Datetime last-IP now-IP), Times(每次開機累進+1)
@@ -109,6 +109,7 @@ if __name__ == '__main__':
     #print(platform.platform())  
     MAC = get_mac_address()
     #print(MAC)
+    now_ip = getIP()
     try:
         print (file_path)
         ip_file = open(file_path)
