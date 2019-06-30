@@ -1,5 +1,7 @@
-## Report your IP to email
-auto boot my program after power up, as below  
+## Auto report your IP to email
+In Raspbian Desktop System
+
+auto boot this program after power up, as below  
 
 sudo nano /home/pi/.config/autostart/autoboot.desktop	#create file autoboot.desktop
 
@@ -14,7 +16,7 @@ sudo nano /home/pi/autorun.sh	#create file autorun.sh
 #!/bin/bash
 cd /home/pi
 sudo python3 /home/pi/InformationSystem.py >information.txt
-sudo chmod =777 information.txt
+sudo chmod =766 information.txt
 sudo python3 /home/pi/reportip.py
 #sudo chmod =766 powerupip.txt
 exit 0
