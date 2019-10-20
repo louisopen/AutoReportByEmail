@@ -4,7 +4,7 @@
 #Subject 1: 每次開機產生一條紀錄(Times Hostname MAC Datetime last-IP now-IP),當新的IP與舊的IP不一樣時發出郵件通知, Times(每次開機累進+1)
 #Subject 2: 每次開機檢查新的IP與舊的IP不一樣時發出郵件通知並存檔(Times Hostname MAC Datetime last-IP now-IP), Times(每次開機累進+1)
 #Subject 3: Linux系統定時(Cron)運行檢查新的IP與舊的IP不一樣時發出郵件通知並存檔(Times Hostname MAC Datetime last-IP now-IP), Times(每次開機累進+1)
-#Finially 1: smtplib 電子郵件@gmail.com 與@outlook.com 驗證都OK, 但有些安全性設定會導致無法發送
+#Finially 1: smtplib 電子郵件@gmail.com 與@outlook.com 驗證都OK, 但有些Server安全性設定會導致無法發送
 #Finially 2: 電子郵件"附件"是可以自由選擇
 #Finially 3: "每次開機"是指有網路(ethernet or wifi)情形下開機
 import os, sys, stat, socket
