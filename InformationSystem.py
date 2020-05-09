@@ -93,16 +93,21 @@ bytes_rcvd = '{0:.2f} Mb'.format(net.bytes_sent / 1024/1024)
 print ("網卡接收流量: %s 網卡发送流量: %s" % (bytes_rcvd, bytes_sent))
 #print (psutil.net_connections())       #目前網路連線訊息(太多了)
 
-'''
+
 print ('-----------------------------磁盤信息in Windows---------------------------')
-io = psutil.disk_partitions()
+io = psutil.disk_io_counters()      #获取硬盘IO总个数
+print ("磁盤IO: "+str(io))
+io = psutil.disk_partitions()       #磁盘的完整信息
 print ("系统磁盤信息: "+str(io))
 for i in io:
-    o = psutil.disk_usage(i.device)
+    o = psutil.disk_usage(i.mountpoint)
+    #o = psutil.disk_usage(i.device)
+    #o = psutil.disk_usage('/')
     print ("總容量: "+str(int(o.total/(1024.0*1024.0*1024.0)))+"G")
     print ("已用容量: "+str(int(o.used/(1024.0*1024.0*1024.0)))+"G")
     print ("可用容量: "+str(int(o.free/(1024.0*1024.0*1024.0)))+"G")
 
+'''
 print ('-----------------------------进程信息-------------------------------------')
 # 查看系统全部进程
 for pnum in psutil.pids():
