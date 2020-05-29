@@ -15,14 +15,14 @@ sudo nano /home/pi/autorun.sh	    #create file autorun.sh ()
 cd /home/pi
 sudo python3 /home/pi/InformationSystem.py >information.txt
 sudo chmod =766 information.txt
-sudo python3 /home/pi/reportip.py
+sudo python3 /home/pi/Reportip.py
 #sudo chmod =766 powerupip.txt
 exit 0
 
 ### if you want to try the other auto-run 
 
 sudo nano /etc/crontab              #add on line in crontab for running at 30 second after reboot 
-@reboot sleep 30 ; /home/pi/autorun.sh
+@reboot pi sleep 30 ; /home/pi/autorun.sh
 
 ### Notice
 

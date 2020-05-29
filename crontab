@@ -1,0 +1,9 @@
+# check ip with hourly
+0 */1 * * * /usr/bin/python3 /home/pi/reportip.py
+# Rsync with daily
+0 0 * * * sh /home/pi/RsyncBackup2Server.sh
+#sudo nano /etc/crontab              #add on line in crontab for running at 30 second after reboot 
+#@reboot sleep 30 ; /home/pi/autorun.sh                 #sudo crontab -e
+#@reboot sleep 10 && /home/pi/autorun.sh                #sudo crontab -e
+#@reboot sleep 15 && python3 /home/pi/reportip.py &     #sudo crontab -e
+@reboot pi sleep 15 && python3 /home/pi/Reportip.py &   #sudo nano /etc/crontab
